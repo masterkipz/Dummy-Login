@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <Container>
+    <Container maxWidth="lg">
       <Box
         alignItems="center"
         display="flex"
@@ -43,7 +43,7 @@ const Navbar = () => {
             fontFamily: "Poppins, san-serif",
             flexDirection: isMobile ? "column" : "row",
             marginLeft: "auto",
-            gap:"40px"
+            gap: "40px",
           }}
         >
           <IconButton
@@ -64,7 +64,7 @@ const Navbar = () => {
             }}
             transformOrigin={{
               vertical: "top",
-              horizontal: "right"
+              horizontal: "right",
             }}
           >
             <MenuItem onClick={handleMenuClose} sx={{ fontWeight: "600" }}>
@@ -78,17 +78,29 @@ const Navbar = () => {
             </MenuItem>
           </Menu>
           <Typography
-            sx={{ fontWeight: "600", display: { xs: "none", sm: "block" } }}
+            sx={{
+              fontWeight: "600",
+              display: { xs: "none", sm: "block" },
+              cursor: "pointer",
+            }}
           >
             Home
           </Typography>
           <Typography
-            sx={{ fontWeight: "600", display: { xs: "none", sm: "block" } }}
+            sx={{
+              fontWeight: "600",
+              display: { xs: "none", sm: "block" },
+              cursor: "pointer",
+            }}
           >
             About
           </Typography>
           <Typography
-            sx={{ fontWeight: "600", display: { xs: "none", sm: "block" } }}
+            sx={{
+              fontWeight: "600",
+              display: { xs: "none", sm: "block" },
+              cursor: "pointer",
+            }}
           >
             Portfolio
           </Typography>
