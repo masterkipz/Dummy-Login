@@ -6,12 +6,11 @@ import {
   useMediaQuery,
   IconButton,
   ButtonBase,
-  Drawer,
+  SwipeableDrawer,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import { color, width } from "@mui/system";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -24,7 +23,7 @@ const Navbar = () => {
   }
 
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Box
         alignItems="center"
         display="flex"
@@ -51,20 +50,48 @@ const Navbar = () => {
             <MenuIcon fontSize="large" />
           </IconButton>
 
-          <Drawer sx={{opacity:"0.7"}} anchor="right" open={openDrawer} onClose={handleClick}>
-            <Container style={{width:"150px"}}>
-              <ButtonBase>
-                <Typography>Home</Typography>
+          <SwipeableDrawer
+            PaperProps={{
+              sx: {
+                backgroundColor: "#45a29e",
+                opacity: "0.9",
+                height: "200px",
+                borderRadius: "10px",
+                position: "absolute",
+                right: "20px",
+                top: "45px",
+              },
+            }}
+            anchor="right"
+            open={openDrawer}
+            onClose={handleClick}
+            onOpen={handleClick}
+          >
+            <Container
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                marginTop: "30px",
+              }}
+              style={{ width: "120px" }}
+            >
+              <ButtonBase sx={{ padding: "10px" }}>
+                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                  Home
+                </Typography>
               </ButtonBase>
-              <ButtonBase>
-                <Typography>About</Typography>
+              <ButtonBase sx={{ padding: "10px" }}>
+                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                  About
+                </Typography>
               </ButtonBase>
-              <ButtonBase>
-                <Typography>Portfolio</Typography>
-              </ButtonBase> 
+              <ButtonBase sx={{ padding: "10px" }}>
+                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                  Portfolio
+                </Typography>
+              </ButtonBase>
             </Container>
-          </Drawer>
-
+          </SwipeableDrawer>
           <ButtonBase sx={{ display: { xs: "none", sm: "block" } }}>
             <Typography
               sx={{

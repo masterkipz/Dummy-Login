@@ -14,8 +14,10 @@ const Home = () => {
             fontSize: "164px",
             fontWeight: "900",
             textAlign: "center",
+            marginTop:"30px",
             "@media (max-width: 600px)": {
               fontSize: "80px",
+              marginTop:"30px"
             },
           }}
         >
@@ -28,7 +30,6 @@ const Home = () => {
             color: "#C5C6C7",
             fontSize: "24px",
             width: "480px",
-            fontWeight: "600",
             textAlign: "center",
             "@media (max-width: 600px)": {
               fontSize: "18px",
