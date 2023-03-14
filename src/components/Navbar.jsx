@@ -5,107 +5,101 @@ import {
   Typography,
   useMediaQuery,
   IconButton,
-  Menu,
-  MenuItem,
+  ButtonBase,
+  Drawer,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { color, width } from "@mui/system";
 
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [humbergerIcon, setHumbergerIcon] = useState(null);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
-  const handleMenuOpen = (event) => {
-    setHumbergerIcon(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setHumbergerIcon(null);
-  };
+  function handleClick() {
+    setOpenDrawer(!openDrawer);
+  }
 
   return (
-    <Container maxWidth="lg">
+    <Container>
       <Box
         alignItems="center"
         display="flex"
         sx={{ marginTop: isMobile ? "30px" : "20px" }}
       >
-        <Typography sx={{ fontWeight: "600" }} variant="h4">
-          My Portfolio
+        <Typography sx={{ fontWeight: "600", color: "#66FCF1" }} variant="h4">
+          CLIFFORD
         </Typography>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            fontFamily: "Poppins, san-serif",
             flexDirection: isMobile ? "column" : "row",
             marginLeft: "auto",
             gap: "40px",
           }}
         >
           <IconButton
-            sx={{ display: isMobile ? "flex" : "none" }}
+            sx={{ display: isMobile ? "flex" : "none", color: "#66FCF1" }}
             color="inherit"
             aria-label="menu"
-            onClick={handleMenuOpen}
+            onClick={handleClick}
           >
             <MenuIcon fontSize="large" />
           </IconButton>
-          <Menu
-            anchorEl={humbergerIcon}
-            open={Boolean(humbergerIcon)}
-            onClose={handleMenuClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <MenuItem onClick={handleMenuClose} sx={{ fontWeight: "600" }}>
+
+          <Drawer sx={{opacity:"0.7"}} anchor="right" open={openDrawer} onClose={handleClick}>
+            <Container style={{width:"150px"}}>
+              <ButtonBase>
+                <Typography>Home</Typography>
+              </ButtonBase>
+              <ButtonBase>
+                <Typography>About</Typography>
+              </ButtonBase>
+              <ButtonBase>
+                <Typography>Portfolio</Typography>
+              </ButtonBase> 
+            </Container>
+          </Drawer>
+
+          <ButtonBase sx={{ display: { xs: "none", sm: "block" } }}>
+            <Typography
+              sx={{
+                cursor: "pointer",
+
+                color: "#66FCF1",
+              }}
+            >
               Home
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose} sx={{ fontWeight: "600" }}>
+            </Typography>
+          </ButtonBase>
+          <ButtonBase sx={{ display: { xs: "none", sm: "block" } }}>
+            <Typography
+              sx={{
+                cursor: "pointer",
+                color: "#66FCF1",
+              }}
+            >
               About
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose} sx={{ fontWeight: "600" }}>
+            </Typography>
+          </ButtonBase>
+          <ButtonBase sx={{ display: { xs: "none", sm: "block" } }}>
+            <Typography
+              sx={{
+                cursor: "pointer",
+
+                color: "#66FCF1",
+              }}
+            >
               Portfolio
-            </MenuItem>
-          </Menu>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              display: { xs: "none", sm: "block" },
-              cursor: "pointer",
-            }}
-          >
-            Home
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              display: { xs: "none", sm: "block" },
-              cursor: "pointer",
-            }}
-          >
-            About
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              display: { xs: "none", sm: "block" },
-              cursor: "pointer",
-            }}
-          >
-            Portfolio
-          </Typography>
+            </Typography>
+          </ButtonBase>
         </Box>
       </Box>
+      <hr style={{ borderColor: "#66FCF1" }} />
     </Container>
   );
 };
