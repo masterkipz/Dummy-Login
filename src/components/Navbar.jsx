@@ -27,9 +27,9 @@ const Navbar = () => {
       <Box
         alignItems="center"
         display="flex"
-        sx={{ marginTop: isMobile ? "30px" : "20px" }}
+        sx={{ marginTop: isMobile ? "30px" : "50px" }}
       >
-        <Typography sx={{ fontWeight: "600", color: "#66FCF1" }} variant="h4">
+        <Typography sx={{ fontWeight: "600", color: "#323232" }} variant="h4">
           CLIFFORD
         </Typography>
         <Box
@@ -42,7 +42,7 @@ const Navbar = () => {
           }}
         >
           <IconButton
-            sx={{ display: isMobile ? "flex" : "none", color: "#66FCF1" }}
+            sx={{ display: isMobile ? "flex" : "none", color: "#323232" }}
             color="inherit"
             aria-label="menu"
             onClick={handleClick}
@@ -53,7 +53,7 @@ const Navbar = () => {
           <SwipeableDrawer
             PaperProps={{
               sx: {
-                backgroundColor: "#45a29e",
+                backgroundColor: "#DDD0C8",
                 opacity: "0.9",
                 height: "200px",
                 borderRadius: "10px",
@@ -76,17 +76,17 @@ const Navbar = () => {
               style={{ width: "120px" }}
             >
               <ButtonBase sx={{ padding: "10px" }}>
-                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                <Typography sx={{ fontSize: "20px", color: "#0B0C10" }}>
                   Home
                 </Typography>
               </ButtonBase>
               <ButtonBase sx={{ padding: "10px" }}>
-                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                <Typography sx={{ fontSize: "20px", color: "#0B0C10" }}>
                   About
                 </Typography>
               </ButtonBase>
               <ButtonBase sx={{ padding: "10px" }}>
-                <Typography sx={{ fontSize: "20px", fontWeight: "600", color: "#0B0C10" }}>
+                <Typography sx={{ fontSize: "20px", color: "#0B0C10" }}>
                   Portfolio
                 </Typography>
               </ButtonBase>
@@ -97,7 +97,7 @@ const Navbar = () => {
               sx={{
                 cursor: "pointer",
 
-                color: "#66FCF1",
+                color: "#323232",
               }}
             >
               Home
@@ -107,7 +107,7 @@ const Navbar = () => {
             <Typography
               sx={{
                 cursor: "pointer",
-                color: "#66FCF1",
+                color: "#323232",
               }}
             >
               About
@@ -118,7 +118,7 @@ const Navbar = () => {
               sx={{
                 cursor: "pointer",
 
-                color: "#66FCF1",
+                color: "#323232",
               }}
             >
               Portfolio
@@ -126,7 +126,7 @@ const Navbar = () => {
           </ButtonBase>
         </Box>
       </Box>
-      <hr style={{ borderColor: "#66FCF1" }} />
+      <hr style={{ borderColor: "#323232" }} />
     </Container>
   );
 };

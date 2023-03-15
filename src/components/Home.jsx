@@ -1,8 +1,5 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
-import facebookLogo from "../assets/images/facebook-logo.png";
-import githubLogo from "../assets/images/github-logo.png";
-import linkedinLogo from "../assets/images/linkedin-logo.png";
+import { Box, Container, Typography, ButtonBase } from "@mui/material";
 
 const Home = () => {
   return (
@@ -10,24 +7,23 @@ const Home = () => {
       <Box display="flex" justifyContent="center">
         <Typography
           sx={{
-            color: "#66FCF1",
+            color: "#323232",
             fontSize: "164px",
-            fontWeight: "900",
             textAlign: "center",
-            marginTop:"30px",
+            marginTop: "30px",
             "@media (max-width: 600px)": {
               fontSize: "80px",
-              marginTop:"30px"
+              marginTop: "30px",
             },
           }}
         >
-          HELLO
+          Hello
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center">
         <Typography
           sx={{
-            color: "#C5C6C7",
+            color: "#323232",
             fontSize: "24px",
             width: "480px",
             textAlign: "center",
@@ -41,28 +37,29 @@ const Home = () => {
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center">
-        <Typography
+        <ButtonBase
           sx={{
-            color: "#C5C6C7",
+            backgroundColor: "#323232",
+            color: "#FFF",
             fontWeight: "400",
             fontSize: "20px",
             marginTop: "40px",
-            border: "1px solid",
-            borderRadius: "20px",
-            borderColor: "#66FCF1",
+            border: "2px solid",
+            borderRadius: "15px",
+            borderColor: "#323232",
             padding: "10px",
             "@media (max-width: 600px)": {
               marginTop: "60px",
             },
           }}
         >
-          CONTACT ME
-        </Typography>
+          <Typography>Contact me</Typography>
+        </ButtonBase>
       </Box>
       <Box display="flex" justifyContent="center">
         <Box
           sx={{
-            backgroundColor: "#C5C6C8",
+            backgroundColor: "#DDD0C8",
 
             marginTop: "50px",
             borderRadius: "20px",
@@ -73,35 +70,7 @@ const Home = () => {
               marginTop: "100px",
             },
           }}
-        >
-          <img
-            src={facebookLogo}
-            alt="Facebook"
-            style={{
-              height: "55px",
-              width: "55px",
-              margin: "15px",
-            }}
-          />
-          <img
-            src={githubLogo}
-            alt="Facebook"
-            style={{
-              height: "55px",
-              width: "55px",
-              margin: "15px",
-            }}
-          />
-          <img
-            src={linkedinLogo}
-            alt="Facebook"
-            style={{
-              height: "55px",
-              width: "55px",
-              margin: "15px",
-            }}
-          />
-        </Box>
+        ></Box>
       </Box>
     </Container>
   );
